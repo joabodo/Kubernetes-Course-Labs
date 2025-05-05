@@ -1,0 +1,34 @@
+# database/deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: database
+  namespace: hackathon
+spec:
+  selector:
+    matchLabels:
+      app: database
+  template:
+    metadata:
+      labels:
+        app: database
+    spec:
+      containers:
+      - name: postgres
+        image: postgres:14.5
+        ports:
+        - containerPort: 5432
+        env:
+        - name: POSTGRES_USER
+          value: "hackathon"
+        - name: POSTGRES_PASSWORD
+          value: "hackathon"  # In production, use Secrets
+        - name: POSTGRES_DB
+          value: "hackathon"
+        volumeMounts:
+        - name: database-data
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: database-data
+        persistentVolumeClaim:
+          claimName: database-data
