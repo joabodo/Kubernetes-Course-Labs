@@ -1,7 +1,8 @@
 const client = require('prom-client');
 const collectDefaultMetrics = client.collectDefaultMetrics;
-collectDefaultMetrics(); // Collect Node.js default metrics
+collectDefaultMetrics(); 
 
+// Collect Node.js default metrics
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
@@ -15,7 +16,6 @@ let votes = {
   helm: 0,
   prometheus: 0
 };
-
 
 // Middleware
 app.use(cors());
