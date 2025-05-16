@@ -66,7 +66,7 @@ Then open [http://localhost:8080](http://localhost:8080)
 helm install voting-app ./helm/voting-app --namespace vote
 ```
 ![Deployment Screenshot](assets/Deployment.png)
-![Deployment Screenshot](assets/Deployment 1.png)
+![Deployment Screenshot](assets/Deployment1.png)
 To access the app:
 
 ```bash
@@ -85,13 +85,14 @@ Once deployed:
 * Click on a vote option
 * API will record it via `/api/vote`
 * Tally available via `/api/votes`
-
+![Usage Screenshot](assets/Usage1.png)
+![Usage Screenshot](assets/Usage3.png)
 ---
 
 ## Observability
 
 The app publishes metrics on a `/metrics` endpoint.
-
+![Observabition Screenshot](assets/Observabition.png)
 ### Steps:
 
 * Deploy Prometheus Operator
@@ -115,7 +116,8 @@ Login with:
 * Password: prom-operator default
 
 ---
-
+![Grafana Screenshot](assets/Grafana-dashboard.png)
+![Grafana Screenshot](assets/Grafana-dashboard2.png)
 ## Centralized Logging
 
 The app logs to `/logs/app.log`. To centralize logs:
