@@ -1,6 +1,9 @@
+// Dependencies
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+
+//Setting up the Server
 const app = express();
 const port = process.env.PORT || 8080;
 
