@@ -66,7 +66,7 @@ Then open [http://localhost:8080](http://localhost:8080)
 helm install voting-app ./helm/voting-app --namespace vote
 ```
 ![Deployment Screenshot](assets/Deployment.png)
-![Deployment Screenshot](assets/Deployment1.png)
+![Deployment Screenshot](assets/Deployment 1.png)
 To access the app:
 
 ```bash
