@@ -16,6 +16,7 @@ let votes = {
   prometheus: 0
 };
 
+
 // Middleware
 app.use(cors());
 app.use(express.json());
