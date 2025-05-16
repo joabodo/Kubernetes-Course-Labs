@@ -1,0 +1,17 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: voting-app-monitor
+  labels:
+    release: prometheus  # MUST match the release name of your Prometheus Operator
+spec:
+  selector:
+    matchLabels:
+      app: voting-app  # MUST match the labels on your Service
+  namespaceSelector:
+    matchNames:
+      - default  # Change if your app is in another namespace
+  endpoints:
+    - port: http
+      path: /metrics   # Or change to /actuator/prometheus if needed
+      interval: 15s

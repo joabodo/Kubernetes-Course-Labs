@@ -1,0 +1,93 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "voting-app-dashboard",
+    "title": "Voting App Dashboard",
+    "timezone": "browser",
+    "schemaVersion": 30,
+    "version": 1,
+    "refresh": "10s",
+    "panels": [
+      {
+        "type": "graph",
+        "title": "Vote Counts Over Time",
+        "gridPos": { "x": 0, "y": 0, "w": 24, "h": 9 },
+        "targets": [
+          {
+            "expr": "votes_total{option=\"kubernetes\"}",
+            "legendFormat": "Kubernetes",
+            "refId": "A"
+          },
+          {
+            "expr": "votes_total{option=\"docker\"}",
+            "legendFormat": "Docker",
+            "refId": "B"
+          },
+          {
+            "expr": "votes_total{option=\"helm\"}",
+            "legendFormat": "Helm",
+            "refId": "C"
+          },
+          {
+            "expr": "votes_total{option=\"prometheus\"}",
+            "legendFormat": "Prometheus",
+            "refId": "D"
+          }
+        ],
+        "datasource": "Prometheus",
+        "lines": true,
+        "linewidth": 2,
+        "points": false
+      },
+      {
+        "type": "stat",
+        "title": "Kubernetes Votes",
+        "gridPos": { "x": 0, "y": 10, "w": 6, "h": 5 },
+        "targets": [
+          {
+            "expr": "votes_total{option=\"kubernetes\"}",
+            "refId": "A"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "type": "stat",
+        "title": "Docker Votes",
+        "gridPos": { "x": 6, "y": 10, "w": 6, "h": 5 },
+        "targets": [
+          {
+            "expr": "votes_total{option=\"docker\"}",
+            "refId": "B"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "type": "stat",
+        "title": "Helm Votes",
+        "gridPos": { "x": 12, "y": 10, "w": 6, "h": 5 },
+        "targets": [
+          {
+            "expr": "votes_total{option=\"helm\"}",
+            "refId": "C"
+          }
+        ],
+        "datasource": "Prometheus"
+      },
+      {
+        "type": "stat",
+        "title": "Prometheus Votes",
+        "gridPos": { "x": 18, "y": 10, "w": 6, "h": 5 },
+        "targets": [
+          {
+            "expr": "votes_total{option=\"prometheus\"}",
+            "refId": "D"
+          }
+        ],
+        "datasource": "Prometheus"
+      }
+    ]
+  },
+  "overwrite": true
+}
