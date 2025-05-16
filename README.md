@@ -2,7 +2,7 @@
 
 # Kubernetes Voting App
 
-A simple web-based voting application built with Node.js and Express, deployed in Kubernetes as part of the [Kubernetes Course Labs](https://kubernetes.courselabs.co/hackathon/). This project covers containerization, deployment, observability, logging, and CI/CD pipelines using Helm, Prometheus, Grafana, Fluent Bit, Elasticsearch, Kibana, Jenkins, and GitHub.
+A simple web-based voting application built with Node.js and Express, deployed in Kubernetes as part of the [Kubernetes Course Labs](https://kubernetes.courselabs.co/hackathon/). This project covers containerization, deployment, observability, logging, and CI/CD pipelines using Helm, Prometheus, Grafana, Fluent Bit, Elasticsearch, Kibana, Jenkins, and Github.
 
 ---
 
